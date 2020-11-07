@@ -74,6 +74,22 @@ The entire application is contained within the `app.rb` file.
     "message": "Animal deleted"
     }
 
+### Request : Search a cat with the corresponding :id or name.
+
+`GET http://localhost:3000/animals/?search={name}`  
+
+Example call and response: 'GET http://localhost:3000/animals/?search=poppy'
+
+   
+    {
+        "id": 2,
+        "name": "Poppy",
+        "age": "14",
+        "breed": "Turkish Angora"
+    },
+
+
+
 ## Notes
 * Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
 You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
