@@ -2,6 +2,9 @@ class AnimalsController < ApplicationController
 
   def index
     @animals = Animal.all
+    if params[:page]
+      @animals = Animal.all.page(params[:page])
+    end
     json_response(@animals)
   end
 
@@ -38,7 +41,16 @@ class AnimalsController < ApplicationController
     json_response(@animal)
   end
 
+  def search
+    @animals = Animal.search(params[:name])
+    if params[:page]
+      @animals = Animal.search(params[:name].page(params[:page]))
+    end
+    json_response(@animals)
+  end
+
   def animal_params
     params.permit(:name, :age, :breed)
   end
 end
+

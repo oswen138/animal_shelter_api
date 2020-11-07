@@ -74,3 +74,42 @@ The entire application is contained within the `app.rb` file.
     "message": "Animal deleted"
     }
 
+## Notes
+* Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
+You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
+## 
+
+    
+    #animal-shelter-API/config/initializers/rack_attack.rb (for rails app)
+    ...  
+      Rack::Attack.throttle("requests by ip", limit: 3, period: 2) do |request|
+      request.ip
+    end
+    ...
+  * Throttle call attempts for this API is limited to 3 reqs/2 minutes by default. 
+You can customize the limit and period or completely deactivate by commenting/deleting the following code block.
+## 
+
+    
+    #animal-shelter-API/app/controllers/animals_controller.rb 
+    ...
+    @animals = Animal.paginate(page: params[:page], :per_page => 10)
+    ...
+
+## Known Bugs
+* Cat and Dog search results are not separate...not sure how to fix this issue yet, need help
+
+## Technologies Used
+* Ruby
+  * Gems: Pry, RSpec, will_paginate, rake_attack, factory_bot
+* Rails
+
+## Support and contact details
+;
+_Email no one with any questions, comments, or concerns._
+
+### License
+
+*{This software is licensed under the MIT license}*
+
+Copyright (c) 2020 **_Ophelia Swen_**
