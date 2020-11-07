@@ -5,6 +5,7 @@ class AnimalsController < ApplicationController
     if params[:page]
       @animals = Animal.all.page(params[:page])
     end
+    @animals = Animal.paginate(page: params[:page], :per_page => 10)
     json_response(@animals)
   end
 

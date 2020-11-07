@@ -1,11 +1,11 @@
-# Animal Shelter API application
+# Animal Shelter API Application 
 
-This is an API for a local animal shelter. The API will list the available cats and dogs at the shelter.
+This is an API for a local animal shelter. The API will list the available animals (cat breeds) at the shelter.
 
 The entire application is contained within the `app.rb` file.
 
 ## Install
-    Clone  https://github.com/oswen138/animal-shelter-api.git
+    Clone  https://github.com/oswen138/animal_shelter_api.git
     bundle install
     rake db:create
     rake db:migrate
@@ -97,7 +97,7 @@ You can customize the limit and period or completely deactivate by commenting/de
     ...
 
 ## Known Bugs
-* Cat and Dog search results are not separate...not sure how to fix this issue yet, need help
+* API shows cat breeds only at this time.
 
 ## Technologies Used
 * Ruby
@@ -105,7 +105,6 @@ You can customize the limit and period or completely deactivate by commenting/de
 * Rails
 
 ## Support and contact details
-;
 _Email no one with any questions, comments, or concerns._
 
 ### License
@@ -113,3 +112,4 @@ _Email no one with any questions, comments, or concerns._
 *{This software is licensed under the MIT license}*
 
 Copyright (c) 2020 **_Ophelia Swen_**
+Epicodus Building an API Independent Project
